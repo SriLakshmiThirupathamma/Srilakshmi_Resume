@@ -1,0 +1,144 @@
+% Awesome-CV-inspired (single-file) resume -- compile with pdfLaTeX.
+% NOTE: This mimics Awesome-CV styling without requiring the full Awesome-CV class files.
+% Replace bracketed placeholders before submitting.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.68in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% --- Awesome-CV-ish theme ---
+\definecolor{Awesome}{HTML}{1F4E79}
+\definecolor{DarkText}{HTML}{222222}
+\definecolor{LightText}{HTML}{555555}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\titleformat{\section}{\color{Awesome}\large\bfseries}{}{0pt}{}[\color{Awesome}\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=1.25em,topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+
+\newcommand{\cvsection}[1]{\section*{#1}}
+\newcommand{\cventryhead}[2]{\textbf{#1} \hfill \textbf{#2}\\}
+\newcommand{\cvrole}[1]{\textit{#1}\\[-1pt]}
+
+\begin{document}
+% --- Header (Awesome-CV style: name left, contacts right) ---
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+{\Huge\bfseries\color{Awesome} SRI LAKSHMI} &
+\footnotesize\color{LightText}
+\faMapMarker*\ [City, State, India]\\
+& \footnotesize\color{LightText}\faPhone\ +91 9100560240\\
+& \footnotesize\color{LightText}\faEnvelope\ \href{mailto:srilakshmikunduru29@gmail.com}{srilakshmikunduru29@gmail.com}\\
+& \footnotesize\color{LightText}\faLinkedin\ [linkedin.com/in/your-profile]\\
+& \footnotesize\color{LightText}\faGithub\ [github.com/your-username]\\
+\end{tabularx}
+\vspace{2pt}
+{\normalsize\color{DarkText} Full Stack Engineer \textbar{} Applied AI \& GenAI Developer}
+\vspace{-6pt}
+
+\section*{PROFESSIONAL SUMMARY}
+Full-stack engineer and Senior Consultant with 5+ years of experience delivering enterprise software in banking, contact-center, and conversational-AI domains. Skilled in React.js, JavaScript, Node.js, Express.js, REST APIs, MongoDB, authentication, and approval workflows. Experienced in frontend technical leadership, code reviews, and cross-functional delivery. Built independent LLM-enabled applications with Python, Streamlit, Flask, and model APIs, combining production full-stack engineering with applied GenAI development.
+
+\section*{TECHNICAL SKILLS}
+\textbf{Frontend:} React.js, JavaScript (ES6+), React Hooks, Context API, HTML5, CSS3, Ant Design, Bootstrap\\
+\textbf{Backend:} Node.js, Express.js, Python, Flask, REST APIs, JWT, RBAC, authentication and authorization\\
+\textbf{Data:} MongoDB, Mongoose, SQLite, SQL fundamentals\\
+\textbf{AI / GenAI:} LLM API integration, OpenRouter, Groq, Streamlit, conversational AI intents/entities, text summarization, Claude-assisted document analysis\\
+\textbf{Engineering:} Git, GitHub, pull request reviews, Agile/Scrum, unit and API testing, Kibana, DevOps coordination
+
+\section*{PROFESSIONAL EXPERIENCE}
+\textbf{Xebia IT Architects India Pvt Ltd} \hfill \textbf{May 2023--Present}\\
+\textit{Senior Consultant / Full Stack Engineer \textbar{} Bengaluru, India}\\[-1pt]
+\textit{Client: Axis Bank -- Liquidity Management Solution (Mar 2025--Present)}
+\begin{itemize}
+  \item Lead frontend delivery for banking workflows spanning Checker, Reports, LMS/Admin, and Bulk modules, using React.js and integrations with enterprise APIs.
+  \item Develop account hierarchy, balance and transaction dashboards, configurable sweep-rule screens, and maker-checker approval workflows.
+  \item Contribute to maker operations including intraday transactions, parameter modifications, account addition/delinking, and intercompany loan workflows.
+  \item Integrate React.js interfaces with Node.js/Express REST APIs and support role-based access, authentication, and authorization requirements.
+  \item Review and merge pull requests; coordinate with business analysts, QA, and DevOps teams to clarify requirements and deliver releases.
+  \item Support unit/API testing and query optimization for banking transaction workflows. % Add measured result only if verified.
+\end{itemize}
+\textit{Client: Axis Bank -- Bulk Beneficiary (May 2023--Feb 2025)}
+\begin{itemize}
+  \item Developed and integrated React.js and Node.js functionality for bulk beneficiary management and corporate banking operations using MongoDB and SQLite.
+  \item Built AI-assisted beneficiary validation features (fuzzy matching and duplicate detection) to reduce manual review for large uploads.
+  \item Implemented rule+ML style anomaly checks (limits, format/IFSC validation, suspicious patterns) and surfaced actionable explanations in the UI for maker-checker approval.
+  \item Prototyped GenAI prompts to summarize upload errors and recommend fixes for operations teams, improving turnaround time on failed batches.
+\end{itemize}
+
+\textbf{Vectone Solutions Pvt Ltd} \hfill \textbf{Sep 2022--Apr 2023}\\
+\textit{Full Stack Developer \textbar{} Chennai, India}\\[-1pt]
+\textit{Project: Contact Center as a Service (CCAAS)}
+\begin{itemize}
+  \item Built reusable React components using Hooks and Ant Design for contact-center workflows.
+  \item Developed Node.js/Express REST APIs backed by MongoDB/Mongoose and implemented authentication and authorization middleware.
+  \item Implemented agent-assist UX to surface AI-suggested responses and knowledge snippets within the agent console.
+  \item Added post-interaction summarization and auto-disposition suggestions to reduce wrap-up time and standardize notes.
+  \item Built intent classification and smart routing logic to direct chats/tickets to the right queue based on predicted category.
+  \item Integrated sentiment signals and escalation alerts to help supervisors identify high-risk conversations in near real time.
+  \item Implemented PII detection and redaction for transcripts/logs to support privacy and compliance requirements.
+  \item Enabled speech-to-text / real-time transcripts integration for voice interactions and searchable conversation history.
+\end{itemize}
+% \newpage  % removed to avoid forcing an almost-empty second page
+\textbf{Agiliad Technologies} \hfill \textbf{Apr 2022--Sep 2022}\\
+\textit{Full Stack Developer \textbar{} Bengaluru, India}\\[-1pt]
+\textit{Client: Hewlett Packard Enterprise -- Conversational AI (Jun 2021--Sep 2022)}
+\begin{itemize}
+  \item Designed conversational-AI use cases, intents, and entities using GDF to interpret user requests and support virtual-assistant interactions.
+  \item Used snapshots, pull requests, and Kibana log analysis for delivery and troubleshooting.
+
+
+\section*{SELECTED AI AND SOFTWARE PROJECTS}
+\textbf{Specialty Insurance Underwriting Workbench} \textbar{} \textit{Claude, document analysis, rules-based decisions}
+\begin{itemize}
+  \item Built an LLM-assisted prototype to analyze uploaded underwriting documents alongside rules for capacity, claims, missing documentation, and catastrophe exposure.
+  \item Combined risk scoring and document analysis to recommend \textit{proceed}, \textit{review}, or \textit{defer} outcomes for human review.
+\end{itemize}
+
+\textbf{Wikipedia Research Agent} \textbar{} \textit{Python, Streamlit, LLM APIs, OpenRouter/Groq}
+\begin{itemize}
+  \item Created a research assistant that fetches Wikipedia content, uses LLM APIs to summarize topics, and exports Markdown, JSON, and PDF reports.
+\end{itemize}
+
+\textbf{Smart Clinic Appointment Scheduler} \textbar{} \textit{Python, Flask, SQL, JavaScript}
+\begin{itemize}
+  \item Implemented role-based appointment scheduling, doctor availability management, and safeguards against double booking.
+\end{itemize}
+
+\section*{CERTIFICATIONS AND RECOGNITION}
+\begin{itemize}
+  % Replace the URLs below with your exact verification/credential links (Credly / Google Cloud Skills Boost / internal Xebia links).
+  \item \href{https://www.credly.com}{AWS Certified Generative AI Developer -- Professional} (Issued Aug 07, 2026; Expires Aug 07, 2029).
+  \item \href{https://cloud.google.com/certification}{Google Cloud -- Professional Cloud DevOps Engineer} (Issued Aug 21, 2024; Expired Aug 21, 2026).
+  \item \href{https://frontlinesedutech.com}{Data Science with Generative AI -- FLM (Frontlines EduTech)} (Completed Aug 2025; Issue Date Jun 23, 2026; Serial No: XWB1OPJY).
+  \item \href{https://skillxpert.in}{Quantum Shift -- Claude X-AI Practitioner+ Program (Milestone 1)} (SkillXpert).
+  \item \href{https://xebia.com}{Xebia GEM Award -- Certificate of Appreciation} (Apr 2026).
+  \item \href{https://xebia.com}{Xebia GEM Award -- Certificate of Appreciation} (May 2026).
+  \item \href{https://xebia.com}{Best Techie Award -- Xebia} (2026).
+\end{itemize}
+
+\section*{EDUCATION}
+\textbf{Bachelor of Technology, Electronics and Communication Engineering} \hfill [Graduation Year]\\
+JNTU Kakinada \textbar{} [College Name, if applicable]
+
+% OPTIONAL -- Replace a generic bullet with a validated achievement, such as:
+% \item Improved [specific workflow] by [verified percentage/time reduction]
+%       using [your specific change].
+% Omit any metric you cannot support in an interview.
+\end{document}
